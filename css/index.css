@@ -9,7 +9,7 @@ html,body{
     height: 100%;
     width: 100%;
     /*background-image: url("img/keli.png"); background-repeat: no-repeat;*/
-    background:url("img/keli.png") no-repeat scroll 50% 0 transparent;
+    background:url("../img/keli.png") no-repeat scroll 50% 0 transparent;
     overflow: hidden;
     opacity: 0.08;
     filter:alpha(opacity=8);/* 针对 IE8 以及更早的版本 */
