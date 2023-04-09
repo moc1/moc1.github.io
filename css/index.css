@@ -1,0 +1,84 @@
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-attachment:fixed;
+}
+#background{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    /*background-image: url("img/keli.png"); background-repeat: no-repeat;*/
+    background:url("img/keli.png") no-repeat scroll 50% 0 transparent;
+    overflow: hidden;
+    opacity: 0.08;
+    filter:alpha(opacity=8);/* 针对 IE8 以及更早的版本 */
+    z-index: -99999;
+}
+#headimg{
+    width: 8rem;
+    height: 8rem;
+    border-radius: 5rem;
+    -webkit-animation: changeright 10s linear infinite;
+}
+/**自定义旋转动画*/
+@-webkit-keyframes changeright{
+    0%{-webkit-transform:rotate(0deg);}
+    50%{-webkit-transform:rotate(180deg);}
+    100%{-webkit-transform:rotate(360deg);}
+}
+.normal{
+    color: #646464;
+}
+.introduce{
+    font-size: 0.8rem;
+    color: #969696;
+}
+.personal{
+    padding-top: 5rem;
+    text-align: center
+}
+.title{
+    font-size: 2.5rem;
+    display: block;
+    margin-left: 12rem;
+}
+.title a{
+    color: #646496;
+    text-decoration: none;
+}
+.describe{
+    display: block;
+    margin-left: 12rem;
+    color: #6d6d70;
+}
+.info_img{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 1rem;
+}
+@media screen and (max-width: 375px) {
+    .info_img{
+        width: 4rem;
+        height: 4rem
+    }
+}
+.br{
+    background-color: #1E9FFF;
+    opacity:0.8;
+    width: 100%;
+    height: 4rem;
+}
+.info1{
+    width: 80%;
+    height: 100rem;
+    margin: 0 10%;
+}
+.list{
+    width: 100%;
+}
+.list_content{
+    padding: 3rem 5rem;
+    width: 100%-10rem;
+    height: 12rem;
+}
