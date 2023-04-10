@@ -1,9 +1,10 @@
 var clickNum = 0;
-function getQueryString(name)
-{
-    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+
+function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
     var r = window.location.search.substr(1).match(reg);
-    if(r!=null)return unescape(r[2]); return null;
+    if (r != null) return unescape(r[2]);
+    return null;
 }
 
 function getRequest() {
@@ -15,18 +16,21 @@ function getRequest() {
         return strs[0];
     }
 }
+
 //根据type的值跳转URL
 //var type = getQueryString("type");
 
 //获取url后面的参数
 let param = getRequest();
-if(param == "erp"){
-    window.location.href="https://b36a-163-125-211-180.ngrok-free.app"
+if (param == "erp") {
+    window.location.href = "https://b36a-163-125-211-180.ngrok-free.app"
 }
-if(param == "diancan"){
-    window.location.href="https://254a-163-125-211-180.ngrok-free.app"
+if (param == "diancan") {
+    window.location.href = "https://254a-163-125-211-180.ngrok-free.app"
 }
-function unuse(){
+
+//点击链接的提示
+function unuse() {
     switch (clickNum) {
         case 0:
             alert("暂时不能跳转，因为本来也没打算做详情页。");
@@ -49,4 +53,42 @@ function unuse(){
     }
 
     clickNum++;
+}
+
+//判断客户端类型
+//方法一
+function isPc() {
+    var userAgentInfo = navigator.userAgent;
+    var agentsArr = ["Android", "iPhone", "SymbianOS", "Window Phone", "iPad", "iPod"]
+    var isPc = true;
+    for (var i = 0; i < agentsArr.length; i++) {
+        if(userAgentInfo.indexOf(agentsArr[i]) > 0){
+            isPc = false;
+        }
+    }
+    return isPc;
+}
+//方法二
+function isPc2(){
+    var system = {};
+    var p = navigator.platform;
+    system.win = p.indexOf("Win") == 0;
+    system.mac = p.indexOf("mac") == 0;
+    console.log(system)
+    if(system.win || system.mac) return true;
+    return false;
+}
+//方法三
+function isPc3(){
+    var isMobile =  /(iPhone|iPad|iPod|iOS|Android|Linux armv8l|Linux armv7l|Linux aarch64)/i.test(navigator.platform);
+    //var isPc = /(Win32|Win16|WinCE|Mac68k|MacIntel|MacPPC|Linux mips64)/i.test(navigator.platform);
+    if(!isMobile) return true;
+    return true;
+}
+
+//if(isPc() && isPc2() && isPc3()){alert("pc");}
+if(!isPc() || !isPc2() || !isPc3()){
+    //alert("mobile");
+    console.log(document.getElementById("background"));
+    document.getElementById("background").style.backgroundImage = "url(img/kelishu.png)";
 }
