@@ -1,34 +1,4 @@
 var clickNum = 0;
-
-function getQueryString(name) {
-    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-    var r = window.location.search.substr(1).match(reg);
-    if (r != null) return unescape(r[2]);
-    return null;
-}
-
-function getRequest() {
-    var url = location.search; //获取url中"?"符后的字串
-    if (url.indexOf("?") != -1) {    //判断是否有参数
-        var str = url.substr(1); //从第一个字符开始 因为第0个是?号 获取所有除问号的所有符串
-        strs = str.split("=");   //用等号进行分隔 （因为知道只有一个参数 所以直接用等号进分隔 如果有多个参数 要用&号分隔 再用等号进行分隔）
-        //alert(strs[0]);          //直接弹出第一个参数 （如果有多个参数 还要进行循环的）
-        return strs[0];
-    }
-}
-
-//根据type的值跳转URL
-//var type = getQueryString("type");
-
-//获取url后面的参数
-let param = getRequest();
-if (param == "erp") {
-    window.location.href = "https://b36a-163-125-211-180.ngrok-free.app"
-}
-if (param == "diancan") {
-    window.location.href = "https://254a-163-125-211-180.ngrok-free.app"
-}
-
 //点击链接的提示
 function unuse() {
     switch (clickNum) {
@@ -74,7 +44,6 @@ function isPc2(){
     var p = navigator.platform;
     system.win = p.indexOf("Win") == 0;
     system.mac = p.indexOf("mac") == 0;
-    console.log(system)
     if(system.win || system.mac) return true;
     return false;
 }
@@ -89,6 +58,46 @@ function isPc3(){
 //if(isPc() && isPc2() && isPc3()){alert("pc");}
 if(!isPc() || !isPc2() || !isPc3()){
     //alert("mobile");
-    console.log(document.getElementById("background"));
     document.getElementById("background").style.backgroundImage = "url(img/kelishu.png)";
 }
+
+
+
+
+function loading(){
+    document.getElementById("loading").style.display="block";
+    document.getElementById("content").style.display="none";
+}
+
+function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]);
+    return null;
+}
+//根据type的值跳转URL
+//var type = getQueryString("type");
+
+function getRequest() {
+    var url = location.search; //获取url中"?"符后的字串
+    if (url.indexOf("?") != -1) {    //判断是否有参数
+        var str = url.substr(1); //从第一个字符开始 因为第0个是?号 获取所有除问号的所有符串
+        strs = str.split("=");   //用等号进行分隔 （因为知道只有一个参数 所以直接用等号进分隔 如果有多个参数 要用&号分隔 再用等号进行分隔）
+        //alert(strs[0]);          //直接弹出第一个参数 （如果有多个参数 还要进行循环的）
+        return strs[0];
+    }
+}
+
+//获取url后面的参数
+let param = getRequest();
+if (param == "erp") {
+    loading();
+    window.location.href = "https://b36a-163-125-211-180.ngrok-free.app";
+}
+if (param == "catering") {
+    loading();
+    window.location.href = "https://254a-163-125-211-180.ngrok-free.app"
+}
+
+
+
