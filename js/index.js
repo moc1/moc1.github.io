@@ -92,11 +92,11 @@ function getRequest() {
 let param = getRequest();
 if (param == "erp") {
     loading();
-    window.location.href = "https://b36a-163-125-211-180.ngrok-free.app";
+    window.location.href = "https://def4-163-125-211-180.ngrok-free.app";
 }
 if (param == "catering") {
     loading();
-    window.location.href = "https://254a-163-125-211-180.ngrok-free.app"
+    window.location.href = "https://fa03-163-125-211-180.ngrok-free.app"
 }
 
 
