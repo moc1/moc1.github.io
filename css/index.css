@@ -15,18 +15,20 @@ html,body{
     filter:alpha(opacity=8);/* 针对 IE8 以及更早的版本 */
     z-index: -99999;
 }
+/**自定义旋转动画*/
 #headimg{
     width: 8rem;
     height: 8rem;
     border-radius: 5rem;
     -webkit-animation: changeright 10s linear infinite;
 }
-/**自定义旋转动画*/
+
 @-webkit-keyframes changeright{
     0%{-webkit-transform:rotate(0deg);}
     50%{-webkit-transform:rotate(180deg);}
     100%{-webkit-transform:rotate(360deg);}
 }
+/**自定义旋转动画end*/
 .normal{
     color: #646464;
 }
@@ -82,3 +84,8 @@ html,body{
     width: 100%-10rem;
     height: 12rem;
 }
+/**倒计时*/
+#countdown{
+    text-align: right;
+}
+/**倒计时end*/
