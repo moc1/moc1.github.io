@@ -99,5 +99,13 @@ if (param == "catering") {
     window.location.href = "https://fa03-163-125-211-180.ngrok-free.app"
 }
 
-
+//图片点击旋转
+function imgIevolve(item){
+    //给当前元素添加go
+    item.classList.add('go');
+    setTimeout(function () {
+        //1秒后移除go
+        item.classList.remove('go');
+    },2000)
+}
 
