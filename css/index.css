@@ -73,7 +73,6 @@ html,body{
 }
 .info1{
     width: 80%;
-    height: 100rem;
     margin: 0 10%;
 }
 .list{
@@ -97,4 +96,26 @@ html,body{
 @-webkit-keyframes animTilt {
     0%{-webkit-transform:rotate(0deg);}
     100%{-webkit-transform:rotate(360deg);}
+}
+
+#footer{
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    color: #666;
+}
+
+.info2{
+    width: 90%;
+    margin: 0 5%;
+}
+.info2 a{
+    text-decoration:none;
+}
+.info2 p{
+    font-size: 14px;
+    color: #666666;
+}
+.info2 ul{
+    list-style-type: none;
 }
