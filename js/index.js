@@ -109,3 +109,40 @@ function imgIevolve(item){
     },2000)
 }
 
+//请求访问地址(
+/*var xhr = new XMLHttpRequest();
+xhr.open('get','https://203e-163-125-211-193.ngrok-free.app',true);
+xhr.send(null);
+xhr.onreadystatechange = function () {
+    if(xhr.readyState == 4){
+        if(xhr.status != 200){
+            var link = document.getElementsByClassName("link")[0];
+            link.style.display="none";
+        }
+    }
+}*/
+
+$.ajax({
+    url: "https://203e-163-125-211-193.ngrok-free.app/test.php",
+    type: "GET",
+    dataType: "JSONP", //指定服务器返回的数据类型
+    data:"{}",
+    timeout: 8000,
+    jsonpCallback: "jsonpgz",
+    success: function (data) {
+        /*var result = JSON.stringify(data); //json对象转成字符串
+        console.log(2323232);*/
+        console.log(1111111);
+        console.log(data);
+    },
+    error:function(data,type, err){ console.log("ajax错误类型："+type); console.log(err);return false; },
+    complete:function (XHR ,TextStatus){
+        console.log(XHR);
+        if(XHR.status != 200){
+            var link = document.getElementsByClassName("link")[0];
+            link.style.display="none";
+        }
+    }
+});
+
+
