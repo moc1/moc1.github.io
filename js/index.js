@@ -92,11 +92,11 @@ function getRequest() {
 let param = getRequest();
 if (param == "erp") {
     loading();
-    window.location.href = "https://afca-163-125-211-193.ngrok-free.app";
+    window.location.href = "https://5a03-27-38-211-38.ngrok-free.app";
 }
 if (param == "catering") {
     loading();
-    window.location.href = "https://615c-163-125-211-193.ngrok-free.app"
+    window.location.href = "https://d662-27-38-211-38.ngrok-free.app"
 }
 
 //图片点击旋转
